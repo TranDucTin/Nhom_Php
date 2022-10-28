@@ -21,20 +21,6 @@
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <!-- header_nav -->
         <?php require './header_nav.php' ?>
-        <div class="brown--color box-search-content search_active block-bg close__top">
-            <form action="/danh-muc" class="minisearch" id="search_mini_form" method="get">
-                <div class="field__search">
-                    <input class="txtSearch" name="searchString" type="text"
-                        placeholder="Tìm kiếm sách của bạn ngay tại đây" autocomplete="on" />
-                    <div class="action">
-                        <button type="submit"><i class="zmdi zmdi-search"></i></button>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>Đóng</span>
-            </div>
-        </div>
         <!-- header_slide -->
         <?php require './header_slide.php' ?>
         <section class="wn__product__area brown--color pt--80 pb--30">
@@ -57,50 +43,7 @@
                     if(mysqli_num_rows($result)!=0) { 
                         while($row = mysqli_fetch_array($result)){
                             $giagiam = $row[2]*((100-$row[3])/100);
-                            echo "
-                            <div class='product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12'>
-                        <div class='product__thumb'>
-                            <a class='first__img' href='/chi-tiet/harry-potter-va-bao-boi-tu-than'>
-                                <img src='./images/books/$row[6]' alt='product image' />
-                            </a>
-                            <div class='hot__box'>
-                                <span class='hot-label'> - $row[3] %</span>
-                            </div>
-                        </div>
-                        <div class='product__content content--center'>
-                            <h4>
-                                <a href='single-product.html'>$row[1]</a>
-                            </h4>
-                            <ul class='prize d-flex'>
-                                <li>$giagiam VNĐ</li>
-                                <li class='old_prize'>$row[2] VNĐ</li>
-                            </ul>
-                            <div class='action'>
-                                <div class='actions_inner'>
-                                    <ul class='add_to_links'>
-                                        <li>
-                                            <button class='cart addItem' title='Thêm vào giỏ hàng' href='#'
-                                                data-id='BK-00007'>
-                                                <i class='bi bi-shopping-bag4'></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button class='wishlist' title='Yêu thích' href='wishlist.html'>
-                                                <i class='bi bi-shopping-cart-full'></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button data-toggle='modal' title='Quick View'
-                                                class='quickview modal-view detail-link' href='#productmodal'>
-                                                <i class='bi bi-search'></i>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                            ";
+                            include './book_cart.php';
                         }
                     }
                     ?>
