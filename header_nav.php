@@ -18,45 +18,8 @@
                         <li class="drop">
                             <a href="danhmuc.php">SÁCH</a>
                             <div class="megamenu mega03">
-                                <ul class="item item03">
-                                    <li class="title">THỂ LOẠI</li>
-                                    <li><a href="/danh-muc/kinh-te">Kinh Tế</a></li>
-                                    <li><a href="/danh-muc/van-hoc">Văn Học</a></li>
-                                    <li><a href="/danh-muc/nau-an">Nấu Ăn</a></li>
-                                    <li>
-                                        <a href="/danh-muc/suc-khoe-the-thao">Sức Khoẻ &amp; Thể Thao</a>
-                                    </li>
-                                    <li><a href="/danh-muc/lich-su">Lịch Sử</a></li>
-                                </ul>
-                                <ul class="item item03">
-                                    <li class="title">ĐƯỢC Y&#202;U TH&#205;CH NHẤT</li>
-                                    <li><a href="/danh-muc/tieu-thuyet">Tiểu thuyết</a></li>
-                                    <li>
-                                        <a href="/danh-muc/ton-giao">T&#244;n Gi&#225;o</a>
-                                    </li>
-                                    <li>
-                                        <a href="/danh-muc/lang-mang">L&#227;ng Mạng</a>
-                                    </li>
-                                    <li><a href="/danh-muc/vien-tuong">Viễn Tưởng</a></li>
-                                    <li><a href="/danh-muc/tieu-su">Tiểu Sử</a></li>
-                                </ul>
-                                <ul class="item item03">
-                                    <li class="title">TRỌN BỘ</li>
-                                    <li><a href="/danh-muc/doi-song">Khoa Học</a></li>
-                                    <li><a href="/danh-muc/doi-song">Đời Sống</a></li>
-                                    <li>
-                                        <a href="/danh-muc/hoan-thien">Ho&#224;n Thiện Bản Th&#226;n</a>
-                                    </li>
-                                    <li>
-                                        <a href="/danh-muc/bat-dong-san">Bất Động Sản</a>
-                                    </li>
-                                    <li>
-                                        <a href="/danh-muc/doanh-nhan">Danh Nh&#226;n</a>
-                                    </li>
-                                    <li>
-                                        <a href="/danh-muc/trinh-tham">Trinh Th&#225;m</a>
-                                    </li>
-                                </ul>
+                                <!-- list_category -->
+                                <?php require './list_categorygroup.php' ?>
                             </div>
                         </li>
                         <li class="drop">
@@ -195,3 +158,17 @@
         <!-- Mobile Menu -->
     </div>
 </header>
+<div class="brown--color box-search-content search_active block-bg close__top">
+    <form action="/danh-muc" class="minisearch" id="search_mini_form" method="get">
+        <div class="field__search">
+            <input class="txtSearch" name="searchString" type="text" placeholder="Tìm kiếm sách của bạn ngay tại đây"
+                autocomplete="on" />
+            <div class="action">
+                <button type="submit"><i class="zmdi zmdi-search"></i></button>
+            </div>
+        </div>
+    </form>
+    <div class="close__wrap">
+        <span>Đóng</span>
+    </div>
+</div>
