@@ -42,7 +42,11 @@
                     </div>
                     <div class="col-lg-9 col-12 order-1 order-lg-2">
                         <!-- list and order -->
-                        <?php require './list_order.php' ?>
+                        <?php 
+                        require_once './connect_DB.php';
+                        require './panigation_page.php';
+                        require './list_order.php'
+                        ?>
                         <div class="tab__container">
                             <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
                                 <div class="row">

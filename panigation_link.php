@@ -3,7 +3,7 @@ require_once './connect_DB.php';
 $re = mysqli_query($conn, 'select * from book');
 $numRows = mysqli_num_rows($re); 
 //tổng số trang
-$maxPage = floor($numRows/$rowsPerPage) + 1;
+$maxPage = floor($numRows/$rowsPerPage);
 
 //gắn thêm nút Back
 if($_GET['page']>1) {
@@ -11,7 +11,7 @@ if($_GET['page']>1) {
     <a href=".$_SERVER['PHP_SELF']."?page=".($_GET['page']-1)." rel='next'>«</a>
     </li>";
 }
-for ($i=1 ; $i<$maxPage ; $i++) //tạo link tương ứng tới các trang
+for ($i=1 ; $i<=$maxPage ; $i++) //tạo link tương ứng tới các trang
 {   
     if ($i == $_GET['page']) {
         echo "<li class='page-item active'><a>$i</a></li>";
@@ -22,7 +22,7 @@ for ($i=1 ; $i<$maxPage ; $i++) //tạo link tương ứng tới các trang
     }
 }
 //gắn thêm nút Next
-if($_GET['page']<$maxPage-1) {
+if($_GET['page']<$maxPage) {
     echo "<li class='page-item PagedList-skipToNext'>
     <a href=".$_SERVER['PHP_SELF']."?page=".($_GET['page']+1)." rel='next'>»</a>
     </li>";
