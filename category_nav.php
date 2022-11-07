@@ -8,13 +8,13 @@
         <ul>
             <?php 
             require 'connect_DB.php';
-            $query="SELECT CategoryName,COUNT(BookID) FROM category LEFT JOIN book_category ON category.CategoryID = book_category.CategoryID Group by CategoryName";
+            $query="SELECT CategoryName,COUNT(BookID), category.Url FROM category LEFT JOIN book_category ON category.CategoryID = book_category.CategoryID Group by CategoryName";
             $result=mysqli_query($conn, $query);
             if(mysqli_num_rows($result)!=0) {
                 while($row = mysqli_fetch_array($result)){
                     echo "
                     <li>
-                        <a href='/danh-muc/kinh-te'>$row[0] <span>($row[1])</span></a>
+                        <a href='danhmuc.php?category=$row[2]'>$row[0] <span>($row[1])</span></a>
                     </li>
                     ";
                 }

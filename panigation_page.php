@@ -1,8 +1,9 @@
-<?php 
-$re = mysqli_query($conn, 'select * from book');
+<?php
+require 'panigation_query.php';
+$re = mysqli_query($conn, $panigation_query);
 $numRows = mysqli_num_rows($re); 
 $rowsPerPage=6;
-$maxPage = floor($numRows/$rowsPerPage) + 1;
+$maxPage = floor($numRows/$rowsPerPage)+1;
 if (!isset($_GET['page'])) {
     $_GET['page'] = 1;
 }else{
@@ -10,8 +11,10 @@ if (!isset($_GET['page'])) {
         $_GET['page'] = 1;
     }
 }
+
 $offset =($_GET['page']-1)*$rowsPerPage; 
-$query="SELECT * FROM book LIMIT $offset,$rowsPerPage";
+$query="$panigation_query LIMIT $offset,$rowsPerPage";
 $result=mysqli_query($conn, $query);
+
 
 ?>
