@@ -1,5 +1,8 @@
 <?php 
 $trang = $_GET['page'];
+if($maxPage == 0) {
+    $maxPage =1;
+}
 echo "
 <div class='row'>
     <div class='col-lg-12'>
