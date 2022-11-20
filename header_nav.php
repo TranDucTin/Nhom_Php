@@ -119,30 +119,11 @@
             <div class="col-lg-12 d-none">
                 <nav class="mobilemenu__nav">
                     <ul class="meninmenu">
-                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="./NhomPHP">Trang chủ</a></li>
                         <li>
-                            <a href="/danh-muc">Thể loại</a>
+                            <a href="#">Thể loại</a>
                             <ul>
-                                <li><a href="kinh-te">Kinh Tế</a></li>
-                                <li><a href="van-hoc">Văn Học</a></li>
-                                <li><a href="nau-an">Nấu Ăn</a></li>
-                                <li>
-                                    <a href="suc-khoe-the-thao">Sức Khoẻ &amp; Thể Thao</a>
-                                </li>
-                                <li><a href="lich-su">Lịch Sử</a></li>
-                                <li><a href="tieu-thuyet">Tiểu thuyết</a></li>
-                                <li><a href="ton-giao">T&#244;n Gi&#225;o</a></li>
-                                <li><a href="lang-mang">L&#227;ng Mạng</a></li>
-                                <li><a href="vien-tuong">Viễn Tưởng</a></li>
-                                <li><a href="tieu-su">Tiểu Sử</a></li>
-                                <li><a href="doi-song">Khoa Học</a></li>
-                                <li><a href="doi-song">Đời Sống</a></li>
-                                <li>
-                                    <a href="hoan-thien">Ho&#224;n Thiện Bản Th&#226;n</a>
-                                </li>
-                                <li><a href="bat-dong-san">Bất Động Sản</a></li>
-                                <li><a href="doanh-nhan">Danh Nh&#226;n</a></li>
-                                <li><a href="trinh-tham">Trinh Th&#225;m</a></li>
+                                <?php require "./list_category.php" ?>
                             </ul>
                         </li>
                         <li>
