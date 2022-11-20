@@ -140,7 +140,7 @@
     </div>
 </header>
 <div class="brown--color box-search-content search_active block-bg close__top">
-    <form action="/danh-muc" class="minisearch" id="search_mini_form" method="get">
+    <form action="./searchbook.php" class="minisearch" id="search_mini_form" method="get">
         <div class="field__search">
             <input class="txtSearch" name="searchString" type="text" placeholder="Tìm kiếm sách của bạn ngay tại đây"
                 autocomplete="on" />
