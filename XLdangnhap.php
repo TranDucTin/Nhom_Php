@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
                 $row = mysqli_fetch_array($resultLogin);
                 if($row['Password']==$password) {
                     session_start();
-                    $_SESSION['user']=array($row['CustomerName'],$row['PhoneNumber'],$row['Email'],$row['CustomerAddress']);
+                    $_SESSION['user']=array($row['CustomerName'],$row['PhoneNumber'],$row['Email'],$row['CustomerAddress'],$row['UserID']);
                     header('Location: ./index.php');
                 }else{
                     $validationPassWord="Mật khẩu sai rồi nha";
