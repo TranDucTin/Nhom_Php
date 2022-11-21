@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
             $validationPassWord="Mật khẩu không được để trống";
         }else{
             //code dang nhap o day
-            $query = "SELECT UserName,Password FROM Users WHERE UserName='$username'";
+            $query = "SELECT UserName,Password FROM Users WHERE UserName='$username' and RoleID='RL-001'";
             $resultLogin=mysqli_query($conn, $query);
             if (mysqli_num_rows($resultLogin) == 0) {
                 $validationUserName="Tên đăng nhập không tồn tại";

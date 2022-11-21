@@ -20,6 +20,7 @@
 
 <body>
     <?php 
+    require './KTdangnhap.php';
     require './header_nav.php';
     ?>
 

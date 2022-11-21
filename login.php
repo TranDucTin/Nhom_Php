@@ -19,9 +19,9 @@
 </head>
 
 <body>
+    <?php require './XLdangnhap.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
-        <?php require './header_nav.php'; ?>
-
+        <?php require './header_nav.php' ?>
         <div class="ht__bradcaump__area bg-image--2">
             <div class="container">
                 <div class="row">
@@ -38,7 +38,7 @@
             <div class="container-fluid row justify-content-center">
                 <div class="my__account__wrapper col-md-6">
                     <h3 class="account__title text-center">Đăng nhập</h3>
-                    <form action="/tai-khoan/dang-nhap" method="post">
+                    <form action="" method="post">
                         <div class="account__form">
                             <div class="input__box">
                                 <label for="Username">T&#224;i khoản</label>
@@ -46,7 +46,8 @@
                                     data-val-required="Tên tài khoản được bỏ trống" id="Username" name="Username"
                                     type="text" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Username"
-                                    data-valmsg-replace="true"></span>
+                                    data-valmsg-replace="true"><?php if(isset($validationUserName)) { echo $validationUserName; 
+                                                               } ?></span>
                             </div>
                             <div class="input__box">
                                 <label for="Password">Mật khẩu</label>
@@ -55,10 +56,11 @@
                                     data-val-length-min="6" data-val-required="Mật khẩu không được bỏ trống"
                                     id="Password" name="Password" type="password" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Password"
-                                    data-valmsg-replace="true"></span>
+                                    data-valmsg-replace="true"><?php if(isset($validationPassWord)) { echo $validationPassWord; 
+                                                               } ?></span>
                             </div>
                             <div class="form__btn row justify-content-center align-items-center">
-                                <button>Đăng nhập</button>
+                                <button name="submit">Đăng nhập</button>
                             </div>
                             <label class="label-for-checkbox">
                                 <span>Bạn chưa có tài khoản?
