@@ -101,9 +101,9 @@
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="/tai-khoan/dang-nhap">Đăng Nhập</a></span>
+                                                <span><a href="./login.php">Đăng Nhập</a></span>
                                                 <br />
-                                                <span><a href="/tai-khoan/dang-ky">Tạo Tài Khoản</a></span>
+                                                <span><a href="./register.php">Tạo Tài Khoản</a></span>
                                             </div>
                                         </div>
                                     </div>
