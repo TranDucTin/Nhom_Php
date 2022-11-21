@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <?php include './KTdangnhap.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <!-- header_nav -->
         <?php require './header_nav.php' ?>
