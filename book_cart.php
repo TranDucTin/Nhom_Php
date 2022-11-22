@@ -27,13 +27,7 @@ echo "
                     </li>
                     <li>
                         <button class='wishlist' title='Yêu thích' href='wishlist.html'>
-                            <i class='bi bi-shopping-cart-full'></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button data-toggle='modal' title='Quick View' class='quickview modal-view detail-link'
-                            href='#productmodal'>
-                            <i class='bi bi-search'></i>
+                            <i class='bi bi-love'></i>
                         </button>
                     </li>
                 </ul>

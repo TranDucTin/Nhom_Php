@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
+?>
 <header id="wn__header" class="header__area header__absolute sticky__header">
     <div class="container-fluid">
         <div class="row">
@@ -78,13 +83,13 @@
                                     <span>0 VNĐ</span>
                                 </div>
                                 <div class="mini_action checkout">
-                                    <a class="checkout__btn" href="/gio-hang/thanh-toan">THANH TOÁN</a>
+                                    <a class="checkout__btn" href="./payment.php">THANH TOÁN</a>
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct"></div>
                                 </div>
                                 <div class="mini_action cart">
-                                    <a class="cart__btn" href="/gio-hang">XEM CHI TIẾT GIỎ HÀNG</a>
+                                    <a class="cart__btn" href="./product_cart.php">XEM CHI TIẾT GIỎ HÀNG</a>
                                 </div>
                             </div>
                         </div>
@@ -96,12 +101,25 @@
                             <div class="content-inner">
                                 <div class="switcher-currency">
                                     <strong class="label switcher-label">
-                                        <span>Xin chào </span>
+                                        <span><?php
+                                        if($_SESSION['user']=='') {
+                                            echo "Xin chào";
+                                        }else{
+                                            $ten = $_SESSION['user'][0];
+                                            echo "Xin chào $ten";
+                                        }
+                                        ?></span>
                                     </strong>
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="./login.php">Đăng Nhập</a></span>
+                                                <span><?php
+                                                if($_SESSION['user']=='') {
+                                                    echo "<a href='./login.php'>Đăng Nhập</a>";
+                                                }else{
+                                                    echo "<a href='./logout.php'>Đăng Xuất</a>";
+                                                }
+                                                ?></span>
                                                 <br />
                                                 <span><a href="./register.php">Tạo Tài Khoản</a></span>
                                             </div>
