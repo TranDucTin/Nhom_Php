@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập - My ASP.NET Application</title>
+    <title>Đăng nhập</title>
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
@@ -19,7 +19,6 @@
 </head>
 
 <body>
-    <?php require './KTdangnhap.php' ?>
     <?php require './XLdangnhap.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <?php require './header_nav.php' ?>

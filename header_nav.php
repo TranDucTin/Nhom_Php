@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
+?>
 <header id="wn__header" class="header__area header__absolute sticky__header">
     <div class="container-fluid">
         <div class="row">
@@ -63,31 +68,41 @@
                     <li class="wishlist"><a href="#"></a></li>
                     <li class="shopcart">
                         <!-- Start Shopping Cart -->
+                        <?php
+                        if(isset($_SESSION['cart'])) {
 
-                        <a class="cartbox_active" href="#"><span class="product_qun"><span
-                                    class="cart-float-count">0</span></span></a>
-
-                        <div class="block-minicart minicart__active">
-                            <div class="minicart-content-wrapper" id="cart-float-expand">
-                                <h4>GIỎ HÀNG</h4>
-                                <div class="items-total d-flex justify-content-between">
-                                    <span>0 sách</span>
-                                    <span>Tổng tiền</span>
-                                </div>
-                                <div class="total_amount text-right">
-                                    <span>0 VNĐ</span>
-                                </div>
-                                <div class="mini_action checkout">
-                                    <a class="checkout__btn" href="/gio-hang/thanh-toan">THANH TOÁN</a>
-                                </div>
-                                <div class="single__items">
-                                    <div class="miniproduct"></div>
-                                </div>
-                                <div class="mini_action cart">
-                                    <a class="cart__btn" href="/gio-hang">XEM CHI TIẾT GIỎ HÀNG</a>
+                            $count = count($_SESSION['cart']);
+                            $tongtien=0;
+                            foreach($_SESSION['cart'] as $sach){
+                                $tongtien=$tongtien+($sach[3]*$sach[4]);
+                            }
+                        }else{
+                            $tongtien = 0;
+                            $count = 0;
+                        }
+                            echo "
+                            <a class='cartbox_active' href='#'><span class='product_qun'><span class='cart-float-count'>$count</span></span></a>
+                            <div class='block-minicart minicart__active'>
+                                <div class='minicart-content-wrapper' id='cart-float-expand'>
+                                    <h4>GIỎ HÀNG</h4>
+                                    <div class='items-total d-flex justify-content-between'>
+                                        <div><span class='cart-float-count'>$count </span> sách</span></div>
+                                        <span>Tổng tiền</span>
+                                    </div>
+                                    <div class='total_amount text-right'>
+                                        <span class='tongtien'>$tongtien VNĐ</span>
+                                    </div>
+                                    <div class='mini_action checkout'>
+                                        <a class='checkout__btn' href='./payment.php'>THANH TOÁN</a>
+                                    </div>
+                                    <div class='mini_action cart'>
+                                        <a class='cart__btn' href='./product_cart.php'>XEM CHI TIẾT GIỎ HÀNG</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            
+                            ";
+                        ?>
                         <!-- End Shopping Cart -->
                     </li>
                     <li class="setting__bar__icon">
@@ -96,12 +111,25 @@
                             <div class="content-inner">
                                 <div class="switcher-currency">
                                     <strong class="label switcher-label">
-                                        <span>Xin chào </span>
+                                        <span><?php
+                                        if($_SESSION['user']=='') {
+                                            echo "Xin chào";
+                                        }else{
+                                            $ten = $_SESSION['user'][0];
+                                            echo "Xin chào $ten";
+                                        }
+                                        ?></span>
                                     </strong>
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="./login.php">Đăng Nhập</a></span>
+                                                <span><?php
+                                                if($_SESSION['user']=='') {
+                                                    echo "<a href='./login.php'>Đăng Nhập</a>";
+                                                }else{
+                                                    echo "<a href='./logout.php'>Đăng Xuất</a>";
+                                                }
+                                                ?></span>
                                                 <br />
                                                 <span><a href="./register.php">Tạo Tài Khoản</a></span>
                                             </div>
@@ -130,6 +158,7 @@
                             <a href="#">Đánh giá</a>
                         </li>
                         <li><a href="#">Liên hệ</a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -139,6 +168,7 @@
         <!-- Mobile Menu -->
     </div>
 </header>
+
 <div class="brown--color box-search-content search_active block-bg close__top">
     <form action="./searchbook.php" class="minisearch" id="search_mini_form" method="get">
         <div class="field__search">
