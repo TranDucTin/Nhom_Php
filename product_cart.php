@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <?php session_start(); ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <?php require './header_nav.php' ?>
 
@@ -52,48 +53,76 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="./images/books/BK-00007.jpg"
-                                                        alt="product img" /></a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="/chi-tiet/harry-potter-va-bao-boi-tu-than">Harry Potter v&#224;
-                                                    Bảo bối Tử thần</a>
-                                            </td>
-                                            <td class="product-price">
-                                                <span class="amount">9,000 VNĐ</span>
-                                            </td>
-                                            <td class="product-quantity">
-                                                <button class="btnDecrease" onclick="subItem('BK-00007')"
-                                                    data-bookID="BK-00007">
-                                                    -
-                                                </button>
-                                                <input class="txtQuantity" data-bookID="BK-00007" type="number"
-                                                    value="1" min="1" max="10" />
-                                                <button class="btnIncrease" onclick="addItem('BK-00007')"
-                                                    data-bookID="BK-00007">
-                                                    +
-                                                </button>
-                                            </td>
-                                            <td class="product-subtotal">9,000 VNĐ</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
+                                        <?php 
+                                        if(!isset($_SESSION['cart']) ||empty($_SESSION['cart'])) {
+                                            echo '<tr class="text-center">
+                                            <td colspan="6">Giỏ hàng trống</td>
+                                        </tr>';
+                                        }else{
+                                            foreach($_SESSION['cart'] as $sach){
+                                                $tongtien=$sach[3]*$sach[4];
+                                                echo "
+                                                <tr>
+                                                <td class='product-thumbnail'>
+                                                    <a href='#'><img src='./images/books/$sach[2]'
+                                                            alt='product img' /></a>
+                                                </td>
+                                                <td class='product-name'>
+                                                    <a href='/chi-tiet/harry-potter-va-bao-boi-tu-than'>$sach[1]</a>
+                                                </td>
+                                                <td class='product-price'>
+                                                    <span class='amount'>$sach[3] VNĐ</span>
+                                                </td>
+                                                <td class='product-quantity'>
+                                                    <button class='btnDecrease' onclick='abc()'
+                                                        data-bookID='BK-00007'>
+                                                        -
+                                                    </button>
+                                                    <input class='txtQuantity' data-bookID='BK-00007' type='number'
+                                                        value='$sach[4]' min='1' max='10'b/>
+                                                    <button class='btnIncrease' onclick='addItem('BK-00007')'
+                                                        data-bookID='BK-00007'>
+                                                        +
+                                                    </button>
+                                                </td>
+                                                <td class='product-subtotal'>$tongtien VNĐ</td>
+                                                <td class='product-remove'>
+                                                    <form action='' class='removeItem' method='post'>
+                                                        <input type=hidden name='BookID' value='$sach[0]' />
+                                                        <button type='submit'>X</button>
+                                                    </form>
+                                                </td>
+                                            </tr>";
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="cart__total__amount mt-5">
                                 <span>Tổng giỏ hàng</span>
-                                <span>9,000 VNĐ</span>
+                                <?php 
+                                $total=0;
+                                if(!isset($_SESSION['cart']) ||empty($_SESSION['cart'])) {
+                                    echo "<span>0 VNĐ</span>";
+                                }else{
+                                    foreach($_SESSION['cart'] as $sach){
+                                        $total=$total+($sach[3]*$sach[4]);
+                                    }
+                                    echo "<span>$total VNĐ</span>";
+                                }
+                                ?>
+
+
                             </div>
                         </div>
                         <div class="cartbox__btn flex-column mb-3">
                             <ul
                                 class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
-                                <li><a id="btnContinue" href="#">Tiếp tục mua hàng</a></li>
+                                <li><a id="btnContinue" href="./danhmuc.php">Tiếp tục mua hàng</a></li>
                                 <li><a id="btnDeleteAll" href="#">Xoá giỏ hàng</a></li>
                                 <li><a id="btnUpdate" href="#">Cập nhật giỏ hàng</a></li>
-                                <li><a id="btnPayment" href="#">Thanh toán</a></li>
+                                <li><a id="btnPayment" href="./payment.php">Thanh toán</a></li>
                             </ul>
                         </div>
                     </div>
@@ -113,7 +142,7 @@
 
     <script src="./assets/client/js/controller/baseController.js"></script>
 
-    <script src="./assets/client/js/controller/cartController.js"></script>
+    <script src="./assets/client/js/controller/bookController.js"></script>
 </body>
 
 </html>

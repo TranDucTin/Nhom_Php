@@ -1,4 +1,18 @@
 <?php
+if($row[4]<=0) {
+    $button="<p class='text-danger'>Hết hàng</p>";
+}else{
+    $button="<form action='' class='addItem' method='post'>
+  <input type=hidden name='BookID' value='$row[0]' />
+  <input type=hidden name='BookName' value='$row[1]' />
+  <input type=hidden name='Image' value='$row[6]' />
+  <input type=hidden name='Price' value='$giagiam' />
+  <input type=hidden name='Quantity' value='1' />
+  <button type='submit' name='add' class='cart' title='Thêm vào giỏ hàng'>
+      <i class='bi bi-shopping-bag4'></i>
+  </button>
+</form>";
+}
 echo "
 <div class='product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12'>
     <div class='product__thumb'>
@@ -21,13 +35,11 @@ echo "
             <div class='actions_inner'>
                 <ul class='add_to_links'>
                     <li>
-                        <button class='cart addItem' title='Thêm vào giỏ hàng' href='#' data-id='BK-00007'>
-                            <i class='bi bi-shopping-bag4'></i>
-                        </button>
+                        $button
                     </li>
                     <li>
-                        <button class='wishlist' title='Yêu thích' href='wishlist.html'>
-                            <i class='bi bi-love'></i>
+                        <button type='submit' name='delete' class='wishlist' title='Yêu thích'>
+                            <i class='bi bi-shopping-cart-full'></i>
                         </button>
                     </li>
                 </ul>
