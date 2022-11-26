@@ -1,15 +1,15 @@
 <?php
 session_start();
-if(isset($_SESSION['cart'])) {
-    // var_dump($_SESSION['cart']);
-    // echo json_encode($_SESSION['cart']);
-    foreach($_SESSION['cart'] as $item){
-        var_dump($item);
-    }
-}else{
-    echo 'chua co ma oi'
-    ;
-}
+// if(isset($_SESSION['cart'])) {
+//     // var_dump($_SESSION['cart']);
+//     // echo json_encode($_SESSION['cart']);
+//     foreach($_SESSION['cart'] as $item){
+//         var_dump($item);
+//     }
+// }else{
+//     echo 'chua co ma oi'
+//     ;
+// }
 require './connect_DB.php';
 function ktQuantity($id,$qty,$conn)
 {
@@ -24,7 +24,7 @@ function ktQuantity($id,$qty,$conn)
         }
     }
 }
-echo ktQuantity('BK-00001', 9, $conn);
+// echo ktQuantity('BK-00001', 9, $conn);
 // echo $_SESSION['cart'][1][4];
 
 
@@ -39,4 +39,5 @@ echo ktQuantity('BK-00001', 9, $conn);
 // }
 
 // echo kt('BK-000dfg01');
+echo $_SESSION['cart']['BK-00001'][4];
 ?>
