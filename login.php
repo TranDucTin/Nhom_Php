@@ -64,7 +64,7 @@
                             </div>
                             <label class="label-for-checkbox">
                                 <span>Bạn chưa có tài khoản?
-                                    <a class="" style="color: #2f5aa2" href="./register.html">Đăng kí ngay</a></span>
+                                    <a class="" style="color: #2f5aa2" href="./register.php">Đăng kí ngay</a></span>
                             </label>
                             <a class="forget_pass" href="#">Quên mật khẩu?</a>
                         </div>

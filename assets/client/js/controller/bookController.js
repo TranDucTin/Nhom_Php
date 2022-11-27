@@ -14,17 +14,20 @@
         //Mua thành công
         alert(response.message);
         console.log(response);
-        $(
-          "<span class='cart-float-count'>" + response.status.length + "</span>"
-        ).replaceAll(".cart-float-count");
-        var cart = response.status;
-        var tongtien = 0;
-        cart.forEach((element) => {
-          tongtien += element[3] * element[4];
+        // $(
+        //   "<span class='cart-float-count'>" + response.status.length + "</span>"
+        // ).replaceAll(".cart-float-count");
+        // var cart = response.status;
+        // var tongtien = 0;
+        // cart.forEach((element) => {
+        //   tongtien += element[3] * element[4];
+        // });
+        // $("<span class='tongtien'>" + tongtien + "VNĐ</span>").replaceAll(
+        //   ".tongtien"
+        // );
+        $.get("shop_cart_content.php", function (contentHTML) {
+          $("#shopcartcontent").html(contentHTML);
         });
-        $("<span class='tongtien'>" + tongtien + "VNĐ</span>").replaceAll(
-          ".tongtien"
-        );
         console.log(tongtien);
       }
     },
@@ -47,6 +50,9 @@ $(".removeItem").submit(function (event) {
         //Mua thành công
         $.get("product_cart_content.php", function (contentHTML) {
           $("#ajax-cart").html(contentHTML);
+        });
+        $.get("shop_cart_content.php", function (contentHTML) {
+          $("#shopcartcontent").html(contentHTML);
         });
       }
     },

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng k&#253; - My ASP.NET Application</title>
+    <title>Đăng k&#253;</title>
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />

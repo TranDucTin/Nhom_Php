@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết S&#225;ch - My ASP.NET Application</title>
+    <title>Chi tiết S&#225;ch</title>
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
@@ -75,10 +75,21 @@
                                             <input id="qty" class="input-text qty" name="qty" min="1" max="10" value="1"
                                                 title="Qty" type="number" />
                                             <div class="addtocart__actions">
-                                                <button id="btnAddItem" class="tocart" type="submit"
-                                                    title="Add to Cart">
-                                                    Thêm vào giỏ
-                                                </button>
+                                                <form action='' class='addItem' method='post'>
+                                                    <input type=hidden name='BookID'
+                                                        value='<?php echo $rowdetail['BookID'] ?>' />
+                                                    <input type=hidden name='BookName'
+                                                        value='<?php echo $rowdetail['BookName'] ?>' />
+                                                    <input type=hidden name='Image'
+                                                        value='<?php echo $rowdetail['Avatar'] ?>' />
+                                                    <input type=hidden name='Price'
+                                                        value='<?php echo $rowdetail['Price']*((100-$rowdetail['DiscountPercent'])/100) ?>' />
+                                                    <input type=hidden name='Quantity' value='1' />
+                                                    <button type='submit' name='add' class='tocart'
+                                                        title='Thêm vào giỏ hàng'>
+                                                        Thêm vào giỏ
+                                                    </button>
+                                                </form>
                                             </div>
                                             <div class="product-addto-links clearfix">
                                                 <a class="wishlist" href="#"></a>
@@ -130,11 +141,10 @@
     <script src="./Scripts/vendor/jquery-3.2.1.min.js"></script>
     <script src="./Scripts/vendor/jquery-ui.js"></script>
     <script src="./Scripts/popper.min.js"></script>
-
     <script src="./Scripts/plugins.js"></script>
     <script src="./Scripts/active.js"></script>
-
     <script src="./assets/client/js/controller/baseController.js"></script>
+    <script src="./assets/client/js/controller/bookController.js"></script>
 </body>
 
 </html>

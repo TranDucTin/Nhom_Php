@@ -61,7 +61,7 @@
             <div class="cart__total__amount mt-5">
                 <span>Tổng giỏ hàng</span>
                 <?php 
-                                $total=0;
+                $total=0;
                 if(!isset($_SESSION['cart']) ||empty($_SESSION['cart'])) {
                     echo "<span>0 VNĐ</span>";
                 }else{
@@ -78,8 +78,6 @@
         <div class="cartbox__btn flex-column mb-3">
             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                 <li><a id="btnContinue" href="./danhmuc.php">Tiếp tục mua hàng</a></li>
-                <li><a id="btnDeleteAll" href="#">Xoá giỏ hàng</a></li>
-                <li><a id="btnUpdate" href="#">Cập nhật giỏ hàng</a></li>
                 <li><a id="btnPayment" href="./payment.php">Thanh toán</a></li>
             </ul>
         </div>
