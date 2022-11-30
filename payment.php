@@ -47,16 +47,18 @@
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>Tên khách hàng <span>*</span></label>
-                                        <input type="text" name='tenkh' value="<?php echo $_SESSION['user'][0] ?>" />
+                                        <input type="text" required name='tenkh'
+                                            value="<?php echo $_SESSION['user'][0] ?>" />
                                     </div>
                                     <div class="input_box space_between">
                                         <label>Số điện thoại <span>*</span></label>
-                                        <input type="text" name='sdt' value="<?php echo $_SESSION['user'][1] ?>" />
+                                        <input type="text" required name='sdt'
+                                            value="<?php echo $_SESSION['user'][1] ?>" />
                                     </div>
                                 </div>
                                 <div class="input_box">
                                     <label>Địa chỉ <span>*</span></label>
-                                    <input type="text" placeholder="Địa chỉ của bạn" name="address"
+                                    <input type="text" required placeholder="Địa chỉ của bạn" name="address"
                                         value="<?php echo $_SESSION['user'][3] ?>" />
                                 </div>
                                 <div class="input_box">

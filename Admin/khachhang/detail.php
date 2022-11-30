@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CHI TIẾT S&#193;CH</title>
+    <title>CHI TIẾT KHÁCH HÀNG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,11 +35,11 @@
         <!-- Navigation -->
 
 
-        <?php require '../header_nav.php' ?>
+        <?php require '../header/header_nav.php' ?>
         <?php 
         require '../../connect_DB.php';
         $id = $_GET['id'];
-        $a = "SELECT * FROM `book` JOIN author on book.AuthorID = author.AuthorID JOIN book_category ON book.BookID = book_category.BookID JOIN category ON book_category.CategoryID = category.CategoryID WHERE book.BookID = '$id'";
+        $a = "SELECT * FROM `customer`  WHERE customer.CustomerID = '$id'";
         $resultbookdetail=mysqli_query($conn, $a);
         if(mysqli_num_rows($resultbookdetail)!=0) {
             $rowdetail = mysqli_fetch_array($resultbookdetail);
@@ -57,121 +57,71 @@
                 <!-- /.row -->
 
 
-                <h3>CHI TIẾT S&#193;CH</h3>
+                <h3>CHI TIẾT KHÁCH HÀNG</h3>
                 <div>
                     <hr />
                     <div class="row" style="font-size: 2rem">
-                        <div class="col-md-4">
-                            <div style="width: 100%">
-                                <img style="width: 100%;" src="../../images/books/<?php echo $rowdetail['Avatar'] ?>" />
-                            </div>
-                        </div>
+
                         <div class=" col-md-4">
                             <dl class="horizontal">
                                 <dt>
-                                    T&#234;n T&#225;c Giả
+                                    Mã Khách Hàng
                                 </dt>
                                 <dd>
-                                    <?php echo $rowdetail['AuthorName'] ?>
+                                    <?php echo $rowdetail['CustomerID'] ?>
                                 </dd>
 
                                 <dt>
-                                    T&#234;n
+                                    Tên Khách Hàng
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['BookName'] ?>
+                                    <?php echo $rowdetail['CustomerName'] ?>
                                 </dd>
 
 
                                 <dt>
-                                    Gi&#225;
+                                    Giới Tính
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['Price'] ?>
+                                    <?php echo $rowdetail['Gender'] ?>
                                 </dd>
 
                                 <dt>
-                                    Giảm gi&#225;
+                                    Ngày Sinh
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['DiscountPercent'] ?>
+                                    <?php echo $rowdetail['Birth'] ?>
                                 </dd>
-
                                 <dt>
-                                    Số lượng
+                                    Địa Chỉ
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['Quantity'] ?>
+                                    <?php echo $rowdetail['CustomerAddress'] ?>
                                 </dd>
-
                                 <dt>
-                                    Đ&#227; b&#225;n
+                                    SĐT
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['TotalSell'] ?>
+                                    <?php echo $rowdetail['PhoneNumber'] ?>
                                 </dd>
-                            </dl>
-                        </div>
-                        <div class="col-md-4">
-                            <dl class="horizontal">
                                 <dt>
-                                    Ng&#224;y đăng
+                                    Email
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['CreateByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    Nh&#224; XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Publisher'] ?>
-                                </dd>
-
-                                <dt>
-                                    Ng&#224;y XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['PublicByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    B&#236;a
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookCover'] ?>
-                                </dd>
-
-                                <dt>
-                                    Số trang
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Pages'] ?>
-                                </dd>
-
-                                <dt>
-                                    M&#244; tả
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookDescription'] ?>
+                                    <?php echo $rowdetail['Email'] ?>
                                 </dd>
                             </dl>
                         </div>
                     </div>
 
                     <hr />
-                    <a href="./index.php">Trở Về</a>
+                    <a href="./indexCus.php">Trở Về</a>
 
                 </div>
 

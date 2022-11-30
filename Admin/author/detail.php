@@ -39,7 +39,7 @@
         <?php 
         require '../../connect_DB.php';
         $id = $_GET['id'];
-        $a = "SELECT * FROM `book` JOIN author on book.AuthorID = author.AuthorID JOIN book_category ON book.BookID = book_category.BookID JOIN category ON book_category.CategoryID = category.CategoryID WHERE book.BookID = '$id'";
+        $a = "SELECT * FROM `author`  WHERE author.AuthorID = '$id'";
         $resultbookdetail=mysqli_query($conn, $a);
         if(mysqli_num_rows($resultbookdetail)!=0) {
             $rowdetail = mysqli_fetch_array($resultbookdetail);
@@ -57,121 +57,50 @@
                 <!-- /.row -->
 
 
-                <h3>CHI TIẾT S&#193;CH</h3>
+                <h3>CHI TIẾT TÁC GIẢ</h3>
                 <div>
                     <hr />
                     <div class="row" style="font-size: 2rem">
-                        <div class="col-md-4">
-                            <div style="width: 100%">
-                                <img style="width: 100%;" src="../../images/books/<?php echo $rowdetail['Avatar'] ?>" />
-                            </div>
-                        </div>
+
                         <div class=" col-md-4">
                             <dl class="horizontal">
                                 <dt>
-                                    T&#234;n T&#225;c Giả
+                                    Mã Tác giả
                                 </dt>
+                                <dd>
+                                    <?php echo $rowdetail['AuthorID'] ?>
+                                </dd>
+
+                                <dt>
+                                    Tên tác Giả
+                                </dt>
+
                                 <dd>
                                     <?php echo $rowdetail['AuthorName'] ?>
                                 </dd>
 
+
                                 <dt>
-                                    T&#234;n
+                                    SĐT
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['BookName'] ?>
-                                </dd>
-
-
-                                <dt>
-                                    Gi&#225;
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Price'] ?>
+                                    <?php echo $rowdetail['PhoneNumber'] ?>
                                 </dd>
 
                                 <dt>
-                                    Giảm gi&#225;
+                                    Url
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['DiscountPercent'] ?>
-                                </dd>
-
-                                <dt>
-                                    Số lượng
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Quantity'] ?>
-                                </dd>
-
-                                <dt>
-                                    Đ&#227; b&#225;n
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['TotalSell'] ?>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-md-4">
-                            <dl class="horizontal">
-                                <dt>
-                                    Ng&#224;y đăng
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['CreateByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    Nh&#224; XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Publisher'] ?>
-                                </dd>
-
-                                <dt>
-                                    Ng&#224;y XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['PublicByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    B&#236;a
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookCover'] ?>
-                                </dd>
-
-                                <dt>
-                                    Số trang
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Pages'] ?>
-                                </dd>
-
-                                <dt>
-                                    M&#244; tả
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookDescription'] ?>
+                                    <?php echo $rowdetail['Url'] ?>
                                 </dd>
                             </dl>
                         </div>
                     </div>
 
                     <hr />
-                    <a href="./index.php">Trở Về</a>
+                    <a href="./indexAuthor.php">Trở Về</a>
 
                 </div>
 

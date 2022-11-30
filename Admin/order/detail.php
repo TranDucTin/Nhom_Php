@@ -39,7 +39,7 @@
         <?php 
         require '../../connect_DB.php';
         $id = $_GET['id'];
-        $a = "SELECT * FROM `book` JOIN author on book.AuthorID = author.AuthorID JOIN book_category ON book.BookID = book_category.BookID JOIN category ON book_category.CategoryID = category.CategoryID WHERE book.BookID = '$id'";
+        $a = "SELECT * FROM `orders`  WHERE orders.OrderID = '$id'";
         $resultbookdetail=mysqli_query($conn, $a);
         if(mysqli_num_rows($resultbookdetail)!=0) {
             $rowdetail = mysqli_fetch_array($resultbookdetail);
@@ -57,121 +57,114 @@
                 <!-- /.row -->
 
 
-                <h3>CHI TIẾT S&#193;CH</h3>
+                <h3>CHI TIẾT ĐƠN HÀNG</h3>
                 <div>
                     <hr />
                     <div class="row" style="font-size: 2rem">
-                        <div class="col-md-4">
-                            <div style="width: 100%">
-                                <img style="width: 100%;" src="../../images/books/<?php echo $rowdetail['Avatar'] ?>" />
-                            </div>
-                        </div>
+
                         <div class=" col-md-4">
                             <dl class="horizontal">
                                 <dt>
-                                    T&#234;n T&#225;c Giả
+                                    Mã Đơn Hàng
                                 </dt>
                                 <dd>
-                                    <?php echo $rowdetail['AuthorName'] ?>
+                                    <?php echo $rowdetail['OrderID'] ?>
                                 </dd>
 
                                 <dt>
-                                    T&#234;n
+                                    Tên Khách Hàng
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['BookName'] ?>
+                                    <?php echo $rowdetail['tenkh'] ?>
                                 </dd>
 
 
                                 <dt>
-                                    Gi&#225;
+                                    SĐT
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['Price'] ?>
+                                    <?php echo $rowdetail['sdt'] ?>
                                 </dd>
 
                                 <dt>
-                                    Giảm gi&#225;
+                                    Địa chỉ
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['DiscountPercent'] ?>
+                                    <?php echo $rowdetail['Address'] ?>
                                 </dd>
-
                                 <dt>
-                                    Số lượng
+                                    Ngày Đặt
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['Quantity'] ?>
+                                    <?php echo $rowdetail['OrderByDate'] ?>
                                 </dd>
-
                                 <dt>
-                                    Đ&#227; b&#225;n
+                                    Tổng Tiền
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['TotalSell'] ?>
+                                    <?php echo $rowdetail['Total'] ?> VNĐ
                                 </dd>
-                            </dl>
-                        </div>
-                        <div class="col-md-4">
-                            <dl class="horizontal">
                                 <dt>
-                                    Ng&#224;y đăng
+                                    Hình Thức Thanh Toán
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['CreateByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    Nh&#224; XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Publisher'] ?>
-                                </dd>
-
-                                <dt>
-                                    Ng&#224;y XB
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['PublicByDate'] ?>
-                                </dd>
-
-                                <dt>
-                                    B&#236;a
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookCover'] ?>
-                                </dd>
-
-                                <dt>
-                                    Số trang
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['Pages'] ?>
-                                </dd>
-
-                                <dt>
-                                    M&#244; tả
-                                </dt>
-
-                                <dd>
-                                    <?php echo $rowdetail['BookDescription'] ?>
+                                    <?php
+                                    if($rowdetail['PaymentID']=='PM-001') {
+                                        echo "Thanh toán tiền mặt";
+                                    }else{
+                                        echo "Thanh toán qua thẻ ngân hàng";
+                                    }
+                                    ?>
                                 </dd>
                             </dl>
                         </div>
                     </div>
+                    <div id="gridContent">
+
+                        <table class="table table-sm table-bordered table-hover table-striped">
+                            <thead>
+                                <tr class="thead-dark">
+                                    <th scope="col">
+                                        <a href="/Admin/Authors?sort=AuthorID&amp;sortdir=ASC">Sách</a>
+                                    </th>
+                                    <th scope="col">
+                                        <a href="/Admin/Authors?sort=AuthorName&amp;sortdir=ASC">Số Lượng</a>
+                                    </th>
+                                    <th scope="col">
+                                        <a href="/Admin/Authors?sort=PhoneNumber&amp;sortdir=ASC">Đơn giá</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                require_once '../../connect_DB.php';
+                                $a = "SELECT book.BookName, orderdetail.Quantity, orderdetail.Price FROM `orderdetail` JOIN `book` ON orderdetail.BookID = book.BookID WHERE orderdetail.OrderID = '$id'";
+                                $result=mysqli_query($conn, $a);
+                                if(mysqli_num_rows($result)!=0) { 
+                                    while($row = mysqli_fetch_array($result)){
+                                        echo "
+<tr>
+                                    <td>$row[0]</td>
+                                    <td>$row[1]</td>
+                                    <td>$row[2]</td>
+                                </tr>
+";
+                                    }
+                                }
+
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <hr />
-                    <a href="./index.php">Trở Về</a>
+                    <a href="./indexOrder.php">Trở Về</a>
 
                 </div>
 

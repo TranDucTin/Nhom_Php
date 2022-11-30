@@ -35,7 +35,9 @@
         <!-- Navigation -->
 
 
-        <?php require '../header_nav.php' ?>
+        <?php
+            require '../header/header_nav.php'
+        ?>
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">

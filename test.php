@@ -63,7 +63,7 @@ require './connect_DB.php';
 // echo getOrderID($conn);
 // $time = time();
 // echo date("Y/m/d");
-var_dump($_SESSION['cart']);
+// var_dump($_SESSION['cart']);
 // function getCusID($conn,$id)
 // {
 //     $a="SELECT CustomerID FROM customer where UserID='$id'";
@@ -74,4 +74,17 @@ var_dump($_SESSION['cart']);
 //     return $row[0];
 // }
 // echo getCusID($conn, 'US-004');
+
+function getBookID($conn)
+{
+    $a='SELECT BookID FROM book  ORDER BY BookID DESC  LIMIT 1';
+    $result=mysqli_query($conn, $a);
+    if(mysqli_num_rows($result)!=0) {
+        $row = mysqli_fetch_array($result);
+    }
+    $dau = substr($row[0], 3);
+    $dau++;
+    return "BK-".$dau;
+}
+echo getBookID($conn);
 ?>

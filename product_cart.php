@@ -36,6 +36,7 @@
 
         <div class="cart-main-area section-padding--lg bg--white">
             <div class="container" id="ajax-cart">
+
                 <?php require 'product_cart_content.php' ?>
                 <!--  -->
             </div>
