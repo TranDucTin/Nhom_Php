@@ -21,6 +21,16 @@ case "remove":
         )
     );
     break;
+case "update":
+    $result = update($conn);
+    echo json_encode(
+        array(
+        'status'=>$result,
+        'message'=>"Thêm sản phẩm thành công",
+        'fail'=>"Thêm sản phẩm không thành công do không đủ số lượng"
+        )
+    );
+    break;
 default:
     break;
 }
@@ -93,6 +103,27 @@ function remove_cart()
     }
     // unset($_SESSION['cart'][5]);
     return true;
+}
+
+function update($conn)
+{
+    foreach ($_POST['quantity'] as $id => $quantity) {
+        // code...
+        // echo "$id =>$quantity";
+        $vt=0;
+        foreach($_SESSION['cart'] as $item){
+            if($item[0]==$id) {
+                if(ktQuantity($id, $quantity-1, $conn)==true) {
+                    $_SESSION['cart'][$vt][4] = $quantity;
+                }else{
+                    return false;
+                }
+            }
+            $vt++;
+        }
+    }
+    return true;
+
 }
 
 ?>

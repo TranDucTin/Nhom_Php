@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <form action="/Cart/Submit" method="post">
+    <form action="XLthanhtoan.php" method="post">
         <section class="wn__checkout__area section-padding--lg bg__white">
             <div class="container">
                 <div class="row">
@@ -47,20 +47,18 @@
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>Tên khách hàng <span>*</span></label>
-                                        <input type="text" value="<?php echo $_SESSION['user'][0] ?>" />
+                                        <input type="text" required name='tenkh'
+                                            value="<?php echo $_SESSION['user'][0] ?>" />
                                     </div>
                                     <div class="input_box space_between">
                                         <label>Số điện thoại <span>*</span></label>
-                                        <input type="text" value="<?php echo $_SESSION['user'][1] ?>" />
+                                        <input type="text" required name='sdt'
+                                            value="<?php echo $_SESSION['user'][1] ?>" />
                                     </div>
                                 </div>
                                 <div class="input_box">
-                                    <label>Email <span>*</span></label>
-                                    <input type="text" value="<?php echo $_SESSION['user'][2] ?>" />
-                                </div>
-                                <div class="input_box">
                                     <label>Địa chỉ <span>*</span></label>
-                                    <input type="text" placeholder="Địa chỉ của bạn" name="address"
+                                    <input type="text" required placeholder="Địa chỉ của bạn" name="address"
                                         value="<?php echo $_SESSION['user'][3] ?>" />
                                 </div>
                                 <div class="input_box">
@@ -78,11 +76,19 @@
                                 <li>Tổng</li>
                             </ul>
                             <ul class="order_product">
-                                <li>
-                                    Harry Potter v&#224; Bảo bối Tử thần x 1
+                                <?php 
+                                foreach($_SESSION['cart'] as $item){
+                                    $tt=$item[3]*$item[4];
+                                    echo "
+                                    <li>
+                                    $item[1] x $item[4]
 
-                                    <span>9,000 VNĐ</span>
-                                </li>
+                                    <span>$tt VNĐ</span>
+                                    </li>
+                                    
+                                    ";
+                                }
+                                ?>
                             </ul>
                             <ul class="shipping__method">
                                 <li>
@@ -100,9 +106,15 @@
                                 </li>
                             </ul>
                             <ul class="total__amount">
-                                <li>Tổng tiền <span>9,000 VNĐ</span></li>
+                                <?php 
+                                $total=0;
+                                foreach($_SESSION['cart'] as $item){
+                                    $total=$total+($item[3]*$item[4]);
+                                }
+                                echo "<li>Tổng tiền <span name='total'>$total VNĐ</span></li>";
+                                ?>
                                 <li class="text-center">
-                                    <input type="submit" value="Đặt hàng" />
+                                    <input type="submit" name='submit' value="Đặt hàng" />
                                 </li>
                             </ul>
                         </div>

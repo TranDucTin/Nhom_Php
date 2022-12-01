@@ -261,6 +261,25 @@
                                         data-valmsg-replace="true"></span>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-3" for="theloai">Thể Loại</label>
+                                <div class="col-md-9">
+                                    <select class="form-control" id="theloai" name="theloai">
+                                        <?php 
+                                        require '../../connect_DB.php';
+                                        $a="SELECT category.CategoryID, category.CategoryName FROM `category`";
+                                        $result=mysqli_query($conn, $a);
+                                        if(mysqli_num_rows($result)!=0) { 
+                                            while($row = mysqli_fetch_array($result)){
+                                                echo "<option value='$row[0]'>$row[1]</option>";
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="ProducerID"
+                                        data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

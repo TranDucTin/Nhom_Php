@@ -35,7 +35,13 @@
 </head>
 
 <body>
-    <?php require 'XLdangnhap.php' ?>
+    <?php
+        require 'XLdangnhap.php';
+        session_start();
+    if(isset($_SESSION['admin']) and $_SESSION['admin']!=='') {
+        header('Location: ./index.php');    
+    }   
+    ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 col-md-offset-4">
@@ -52,7 +58,7 @@
                                         id="Username" name="Username" type="text" value="" />
                                     <div class="validation-summary-errors text-danger" data-valmsg-summary="true">
                                         <p><?php if(isset($validationUserName)) { echo $validationUserName; 
-                                           } ?></p>
+} ?></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -61,7 +67,7 @@
                                         name="Password" type="password" />
                                     <div class="validation-summary-errors text-danger" data-valmsg-summary="true">
                                         <p><?php if(isset($validationPassWord)) { echo $validationPassWord; 
-                                           }?></p>
+}?></p>
                                     </div>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->

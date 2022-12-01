@@ -124,7 +124,7 @@
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['PublicByDate'] ?>
+                                    <?php echo $rowdetail['CreateByDate'] ?>
                                 </dd>
 
                                 <dt>
@@ -140,7 +140,7 @@
                                 </dt>
 
                                 <dd>
-                                    <?php echo $rowdetail['CreateByDate'] ?>
+                                    <?php echo $rowdetail['PublicByDate'] ?>
                                 </dd>
 
                                 <dt>

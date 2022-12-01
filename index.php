@@ -58,7 +58,6 @@
     <script src="./Scripts/vendor/jquery-3.2.1.min.js"></script>
     <script src="./Scripts/vendor/jquery-ui.js"></script>
     <script src="./Scripts/popper.min.js"></script>
-
     <script src="./Scripts/plugins.js"></script>
     <script src="./Scripts/active.js"></script>
 
