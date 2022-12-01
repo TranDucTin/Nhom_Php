@@ -83,15 +83,3 @@
         </div>
     </div>
 </div>
-
-
-<script src="./Scripts/vendor/jquery-3.2.1.min.js"></script>
-<script src="./Scripts/vendor/jquery-ui.js"></script>
-<script src="./Scripts/popper.min.js"></script>
-
-<script src="./Scripts/plugins.js"></script>
-<script src="./Scripts/active.js"></script>
-
-<script src="./assets/client/js/controller/baseController.js"></script>
-
-<script src="./assets/client/js/controller/bookController.js"></script>

@@ -45,7 +45,7 @@
         <!-- Navigation -->
 
 
-        <?php require '../header_nav.php' ?>
+        <?php require '../header/header_nav.php' ?>
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -287,7 +287,7 @@
                     </div>
                 </form>
                 <div>
-                    <a href="./index.php">Trở Về</a>
+                    <a href="./indexBook.php">Trở Về</a>
                 </div>
 
 

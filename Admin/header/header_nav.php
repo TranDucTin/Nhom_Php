@@ -11,7 +11,7 @@ if(!isset($_SESSION['admin'])) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.php"><i class="fas fa-user-shield"></i>Quản lý</a>
+        <a class="navbar-brand" href="../home/index.php"><i class="fas fa-user-shield"></i>Quản lý</a>
     </div>
     <!-- /.navbar-header -->
     <ul class="nav navbar-top-links navbar-right">
@@ -45,13 +45,13 @@ if(!isset($_SESSION['admin'])) {
                     </h4>
                 </li>
                 <li>
-                    <a href="../index.php"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="../home/index.php"><i class="fas fa-home"></i> Trang chủ</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-user fa-fw"></i> Công việc<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/ApprovalOrder">Duyệt đơn h&#224;ng</a>
+                            <a href="../approvalorder/index.php">Duyệt đơn h&#224;ng</a>
                         </li>
                     </ul>
                 </li>
@@ -71,7 +71,7 @@ if(!isset($_SESSION['admin'])) {
                             <a href="../author/indexAuthor.php">T&#225;c giả</a>
                         </li>
                         <li>
-                            <a href="../book/indexBook.php>">S&#225;ch</a>
+                            <a href="../book/indexBook.php">S&#225;ch</a>
                         </li>
                         <li>
                             <a href="../category/indexCategory.php">Thể Loại</a>

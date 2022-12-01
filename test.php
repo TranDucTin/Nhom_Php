@@ -75,16 +75,28 @@ require './connect_DB.php';
 // }
 // echo getCusID($conn, 'US-004');
 
-function getBookID($conn)
+// function getBookID($conn)
+// {
+//     $a='SELECT BookID FROM book  ORDER BY BookID DESC  LIMIT 1';
+//     $result=mysqli_query($conn, $a);
+//     if(mysqli_num_rows($result)!=0) {
+//         $row = mysqli_fetch_array($result);
+//     }
+//     $dau = substr($row[0], 3);
+//     $dau++;
+//     return "BK-".$dau;
+// }
+// echo getBookID($conn);
+
+function ktQuantity($id,$conn)
 {
-    $a='SELECT BookID FROM book  ORDER BY BookID DESC  LIMIT 1';
+    $a="SELECT book.Quantity FROM `book` WHERE BookID='$id'";
     $result=mysqli_query($conn, $a);
-    if(mysqli_num_rows($result)!=0) {
+    if(mysqli_num_rows($result)!=0) { 
         $row = mysqli_fetch_array($result);
+        return $row[0];
     }
-    $dau = substr($row[0], 3);
-    $dau++;
-    return "BK-".$dau;
 }
-echo getBookID($conn);
+
+echo ktQuantity('BK-00001', $conn);
 ?>

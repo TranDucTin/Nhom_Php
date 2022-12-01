@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
                 if($row['Password']==$password) {
                     session_start();
                     $_SESSION['admin']="$username";
-                    header('Location: ./index.php');
+                    header('Location: ./home/index.php');
                 }else{
                     $validationPassWord="Mật khẩu sai rồi nha";
                 }

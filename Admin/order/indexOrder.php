@@ -166,6 +166,9 @@
                                         <a href="/Admin/Authors?sort=Url&amp;sortdir=ASC">Tổng tiền</a>
                                     </th>
                                     <th scope="col">
+                                        <a href="/Admin/Authors?sort=Url&amp;sortdir=ASC">Trạng thái</a>
+                                    </th>
+                                    <th scope="col">
                                         <a href="/Admin/Authors?sort=Ch%e1%bb%a9c+n%c4%83ng&amp;sortdir=ASC">Chức
                                             năng</a>
                                     </th>
