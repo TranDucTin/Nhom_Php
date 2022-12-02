@@ -85,7 +85,7 @@ if(!isset($_SESSION['admin'])) {
                     </ul>
                 </li>
                 <li>
-                    <a href="/Admin/Chart">
+                    <a href="../chart/index.php">
                         <i class="fa fa-pie-chart fa-fw"></i>
                         Thống kê
                     </a>

@@ -88,15 +88,50 @@ require './connect_DB.php';
 // }
 // echo getBookID($conn);
 
-function ktQuantity($id,$conn)
-{
-    $a="SELECT book.Quantity FROM `book` WHERE BookID='$id'";
-    $result=mysqli_query($conn, $a);
-    if(mysqli_num_rows($result)!=0) { 
-        $row = mysqli_fetch_array($result);
-        return $row[0];
-    }
-}
+// function ktQuantity($id,$conn)
+// {
+//     $a="SELECT book.Quantity FROM `book` WHERE BookID='$id'";
+//     $result=mysqli_query($conn, $a);
+//     if(mysqli_num_rows($result)!=0) { 
+//         $row = mysqli_fetch_array($result);
+//         return $row[0];
+//     }
+// }
 
-echo ktQuantity('BK-00001', $conn);
+// echo ktQuantity('BK-00001', $conn);
+// function getReViewID($conn)
+// {
+//     $a='SELECT ReviewID FROM review  ORDER BY ReviewID DESC  LIMIT 1';
+//     $result=mysqli_query($conn, $a);
+//     if(mysqli_num_rows($result)!=0) {
+//         $row = mysqli_fetch_array($result);
+//     }
+//     $dau = substr($row[0], 3);
+//     $dau++;
+//     return "RV-".$dau;
+// }
+// echo getReViewID($conn);
+// function getCusID($usID,$conn)
+// {
+//     $a = "SELECT customer.CustomerID FROM `customer` JOIN users ON customer.UserID = users.UserID WHERE users.UserID='$usID'";
+//     $result=mysqli_query($conn, $a);
+//     if(mysqli_num_rows($result)!=0) {
+//         $row = mysqli_fetch_array($result);
+//     }
+//     return $row[0];
+// }
+// echo getCusID('US-003', $conn);
+// echo password_hash(123456, PASSWORD_DEFAULT);
+function getUserID($conn)
+{
+    $a='SELECT UserID FROM users  ORDER BY UserID DESC  LIMIT 1';
+    $result=mysqli_query($conn, $a);
+    if(mysqli_num_rows($result)!=0) {
+                $row = mysqli_fetch_array($result);
+    }
+    $dau = substr($row[0], 3);
+    $dau++;
+    return "US-".$dau;
+}
+echo getUserID($conn);
 ?>

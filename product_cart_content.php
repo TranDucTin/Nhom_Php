@@ -71,9 +71,8 @@
                     echo "<span>$total VNĐ</span>";
                 }
                 ?>
-
-
             </div>
+
         </div>
         <div class="cartbox__btn flex-column mb-3">
             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
@@ -83,3 +82,5 @@
         </div>
     </div>
 </div>
+
+<script src="./Scripts/active.js"></script>

@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
                 $validationUserName="Tên đăng nhập không tồn tại";
             }else{
                 $row = mysqli_fetch_array($resultLogin);
-                if($row['Password']==$password) {
+                if(password_verify($password, $row['Password'])) {
                     session_start();
                     $_SESSION['user']=array($row['CustomerName'],$row['PhoneNumber'],$row['Email'],$row['CustomerAddress'],$row['UserID']);
                     header('Location: ./index.php');

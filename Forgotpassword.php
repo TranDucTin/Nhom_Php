@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập</title>
+    <title>Quên mật khẩu</title>
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
 <body>
     <?php session_start() ?>
-    <?php require './XLdangnhap.php' ?>
+    <?php require './XLquenmk.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <?php require './header_nav.php' ?>
         <div class="ht__bradcaump__area bg-image--2">
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">Đăng nhập</h2>
+                            <h2 class="bradcaump-title">Quên mật khẩu</h2>
                         </div>
                     </div>
                 </div>
@@ -44,11 +44,11 @@
                         <b><?php echo $_SESSION['response']; ?></b>
                     </div>
                     <?php } unset($_SESSION['response']); ?>
-                    <h3 class="account__title text-center">Đăng nhập</h3>
+                    <h3 class="account__title text-center">Quên mật khẩu</h3>
                     <form action="" method="post">
                         <div class="account__form">
                             <div class="input__box">
-                                <label for="Username">T&#224;i khoản</label>
+                                <label for="Username">Nhập tên tài khoản</label>
                                 <input class="text-box single-line" data-val="true"
                                     data-val-required="Tên tài khoản được bỏ trống" id="Username" name="Username"
                                     type="text" value="" />
@@ -56,24 +56,14 @@
                                     data-valmsg-replace="true"><?php if(isset($validationUserName)) { echo $validationUserName; 
                                                                } ?></span>
                             </div>
-                            <div class="input__box">
-                                <label for="Password">Mật khẩu</label>
-                                <input class="text-box single-line password" data-val="true"
-                                    data-val-length="Mật khẩu ít nhất phải dài hơn 6 ký tự." data-val-length-max="100"
-                                    data-val-length-min="6" data-val-required="Mật khẩu không được bỏ trống"
-                                    id="Password" name="Password" type="password" />
-                                <span class="field-validation-valid text-danger" data-valmsg-for="Password"
-                                    data-valmsg-replace="true"><?php if(isset($validationPassWord)) { echo $validationPassWord; 
-                                                               } ?></span>
-                            </div>
                             <div class="form__btn row justify-content-center align-items-center">
-                                <button name="submit">Đăng nhập</button>
+                                <button name="submit">Next</button>
                             </div>
                             <label class="label-for-checkbox">
                                 <span>Bạn chưa có tài khoản?
                                     <a class="" style="color: #2f5aa2" href="./register.php">Đăng kí ngay</a></span>
                             </label>
-                            <a class="forget_pass" href="./Forgotpassword.php">Quên mật khẩu?</a>
+                            <a class="forget_pass" href="./login.php">Đăng nhập?</a>
                         </div>
                     </form>
                 </div>
