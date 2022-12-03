@@ -71,9 +71,8 @@
                     echo "<span>$total VNĐ</span>";
                 }
                 ?>
-
-
             </div>
+
         </div>
         <div class="cartbox__btn flex-column mb-3">
             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
@@ -84,14 +83,4 @@
     </div>
 </div>
 
-
-<script src="./Scripts/vendor/jquery-3.2.1.min.js"></script>
-<script src="./Scripts/vendor/jquery-ui.js"></script>
-<script src="./Scripts/popper.min.js"></script>
-
-<script src="./Scripts/plugins.js"></script>
 <script src="./Scripts/active.js"></script>
-
-<script src="./assets/client/js/controller/baseController.js"></script>
-
-<script src="./assets/client/js/controller/bookController.js"></script>

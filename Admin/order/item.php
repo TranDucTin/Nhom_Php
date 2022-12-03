@@ -8,6 +8,8 @@ echo "
                                     <td>$row[1]</td>
                                     <td>$row[2]</td>
                                     <td>$row[5]</td>
+                                    <td>$row[3]</td>
+
                                     <td>
 
                                         <a href='detail.php?id=$row[0]' class='edit-btn'><abbr

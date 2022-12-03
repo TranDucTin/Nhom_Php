@@ -16,7 +16,10 @@ if(isset($_POST['update'])) {
 }
 if(isset($_GET['delete'])) {
     $id = $_GET['delete'];
+    $idcus = $_GET['idcus'];
     $a = "DELETE FROM `customer` WHERE `customer`.`CustomerID` = '$id'";
+    $result=mysqli_query($conn, $a);
+    $a = "DELETE FROM `users` WHERE `users`.`UserID` = '$idcus'";
     $result=mysqli_query($conn, $a);
     header('Location: ./indexCus.php');
     $_SESSION['response']="Successfully Deleted to the database!";

@@ -158,7 +158,7 @@
                                 <input type="submit" name='update' value="Sửa" class="btn btn-primary" />
                             </div>
                             <div>
-                                <a href="./indexCategory.php">Trở Về</a>
+                                <a href="./indexCus.php">Trở Về</a>
                             </div>
                         </div>
 

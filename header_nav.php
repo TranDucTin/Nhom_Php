@@ -56,13 +56,14 @@ if(!isset($_SESSION)) {
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="/danh-gia">REVIEW</a></li>
+                        <li><a href="./danhgia.php">REVIEW</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                 <ul class="header__sidebar__right d-flex justify-content-end align-items-center" id="shopcartcontent">
                     <?php require './shop_cart_content.php' ?>
+
                 </ul>
             </div>
         </div>
@@ -76,6 +77,7 @@ if(!isset($_SESSION)) {
                             <a href="#">Thể loại</a>
                             <ul>
                                 <?php require "./list_category.php" ?>
+
                             </ul>
                         </li>
                         <li>
@@ -107,3 +109,4 @@ if(!isset($_SESSION)) {
         <span>Đóng</span>
     </div>
 </div>
+<script src="./Scripts/active.js"></script>

@@ -39,7 +39,7 @@
         require 'XLdangnhap.php';
         session_start();
     if(isset($_SESSION['admin']) and $_SESSION['admin']!=='') {
-        header('Location: ./index.php');    
+        header('Location: ./home/index.php');    
     }   
     ?>
     <div class="container">

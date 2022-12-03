@@ -20,7 +20,7 @@ echo "
                                         <a href='detail.php?id=$row[0]' class='edit-btn'><abbr
                                                 title='Xem chi tiết'><img src='../../images/details.png' width='20'
                                                     height='20' /></abbr></a>
-                                        <a href='action.php?delete=$row[0]' class='edit-btn'><abbr
+                                        <a href='action.php?delete=$row[0]&idcus=$row[7]' Onclick='return ConfirmDelete();' class='edit-btn'><abbr
                                                 title='Xem chi tiết'><img src='../../images/delete.png' width='20'
                                                     height='20' /></abbr></a>
                                     </td>

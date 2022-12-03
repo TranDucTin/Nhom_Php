@@ -35,7 +35,7 @@
         <!-- Navigation -->
 
 
-        <?php require '../header_nav.php' ?>
+        <?php require '../header/header_nav.php' ?>
         <?php 
         require '../../connect_DB.php';
         $id = $_GET['id'];
@@ -171,7 +171,7 @@
                     </div>
 
                     <hr />
-                    <a href="./index.php">Trở Về</a>
+                    <a href="./indexBook.php">Trở Về</a>
 
                 </div>
 

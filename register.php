@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <?php require './XLdangki.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <?php require './header_nav.php' ?>
 
@@ -38,24 +39,26 @@
             <div class="container row justify-content-center">
                 <div class="my__account__wrapper col-md-6">
                     <h3 class="account__title">Đăng k&#253;</h3>
-                    <form action="/tai-khoan/dang-ky" method="post">
+                    <form action="" method="post">
                         <div class="account__form">
                             <div class="input__box">
                                 <label for="Username">T&#234;n t&#224;i khoản</label>
                                 <input class="text-box single-line" data-val="true"
                                     data-val-length="Tên tài khoản ít nhất phải dài hơn 6 ký tự."
                                     data-val-length-max="28" data-val-length-min="6"
-                                    data-val-required="Tên tài khoản không được bỏ trống" id="Username" name="Username"
-                                    type="text" value="" />
+                                    data-val-required="Tên tài khoản không được bỏ trống" required id="Username"
+                                    name="Username" type="text" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Username"
-                                    data-valmsg-replace="true"></span>
+                                    data-valmsg-replace="true"><?php if(isset($validateusername)) {echo $validateusername; 
+                                                               } ?></span>
                             </div>
                             <div class="input__box">
                                 <label for="Password">Mật khẩu</label>
                                 <input class="text-box single-line password" data-val="true"
-                                    data-val-length="Mật khẩu ít nhất phải dài hơn 6 ký tự." data-val-length-max="100"
-                                    data-val-length-min="6" data-val-required="Mật khẩu không được bỏ trống"
-                                    id="Password" name="Password" type="password" />
+                                    data-val-length="Mật khẩu ít nhất phải dài hơn 6 ký tự." required
+                                    data-val-length-max="100" data-val-length-min="6"
+                                    data-val-required="Mật khẩu không được bỏ trống" id="Password" name="Password"
+                                    type="password" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Password"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -64,16 +67,17 @@
                                 <input class="text-box single-line password" data-val="true"
                                     data-val-equalto="Xác nhận mật khẩu phải trùng với mật khẩu"
                                     data-val-equalto-other="*.Password"
-                                    data-val-required="Xác nhận mật khẩu không được bỏ trống" id="ConfirmPassword"
-                                    name="ConfirmPassword" type="password" />
+                                    data-val-required="Xác nhận mật khẩu không được bỏ trống" required
+                                    id="ConfirmPassword" name="ConfirmPassword" type="password" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword"
-                                    data-valmsg-replace="true"></span>
+                                    data-valmsg-replace="true"><?php if(isset($validatepass)) { echo $validatepass; 
+                                                               } ?></span>
                             </div>
                             <div class="input__box">
                                 <label for="Email">Email</label>
                                 <input class="text-box single-line" data-val="true" data-val-email="Email không hợp lệ"
-                                    data-val-required="Email không được bỏ trống" id="Email" name="Email" type="email"
-                                    value="" />
+                                    data-val-required="Email không được bỏ trống" required id="Email" name="Email"
+                                    type="email" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Email"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -82,7 +86,7 @@
                                 <input class="text-box single-line" data-val="true"
                                     data-val-length="The field Tên khách hàng must be a string with a maximum length of 100."
                                     data-val-length-max="100" data-val-required="Tên khách hàng không được bỏ trống"
-                                    id="CustomerName" name="CustomerName" type="text" value="" />
+                                    required id="CustomerName" name="CustomerName" type="text" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="CustomerName"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -90,7 +94,7 @@
                                 <label for="Address">Địa chỉ</label>
                                 <input class="text-box single-line" data-val="true"
                                     data-val-length="The field Địa chỉ must be a string with a maximum length of 100."
-                                    data-val-length-max="100" data-val-required="Địa chỉ không được bỏ trống"
+                                    data-val-length-max="100" data-val-required="Địa chỉ không được bỏ trống" required
                                     id="Address" name="Address" type="text" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Address"
                                     data-valmsg-replace="true"></span>
@@ -100,9 +104,9 @@
                                 Nam
                                 <input checked="checked" data-val="true"
                                     data-val-required="The Giới tính field is required." id="Gender" name="Gender"
-                                    type="radio" value="False" />
+                                    type="radio" value="1" />
                                 Nữ
-                                <input id="Gender" name="Gender" type="radio" value="True" />
+                                <input id="Gender" name="Gender" type="radio" value="0" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="Gender"
                                     data-valmsg-replace="true"></span>
                             </div>
@@ -121,17 +125,17 @@
                                     data-val-length="The field Số điện thoại must be a string with a maximum length of 20."
                                     data-val-length-max="20" data-val-regex="Số điện thoại không hợp lệ"
                                     data-val-regex-pattern="^(\d{10})$"
-                                    data-val-required="Số điện thoại không được bỏ trống" id="PhoneNumber"
+                                    data-val-required="Số điện thoại không được bỏ trống" id="PhoneNumber" required
                                     name="PhoneNumber" type="text" value="" />
                                 <span class="field-validation-valid text-danger" data-valmsg-for="PhoneNumber"
                                     data-valmsg-replace="true"></span>
                             </div>
                             <div class="form__btn row justify-content-center align-items-center">
-                                <button>Đăng ký</button>
+                                <button type='submit' name='submit'>Đăng ký</button>
                             </div>
                             <label class="label-for-checkbox">
                                 <span>Bạn đã có tài khoản?
-                                    <a class="" style="color: #2f5aa2" href="./login.html">Đăng nhập ngay</a></span>
+                                    <a class="" style="color: #2f5aa2" href="./login.php">Đăng nhập ngay</a></span>
                             </label>
                         </div>
                     </form>

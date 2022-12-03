@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CHI TIẾT S&#193;CH</title>
+    <title>CHI TIẾT ĐƠN HÀNG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -147,12 +147,12 @@
                                 $a = "SELECT book.BookName, orderdetail.Quantity, orderdetail.Price FROM `orderdetail` JOIN `book` ON orderdetail.BookID = book.BookID WHERE orderdetail.OrderID = '$id'";
                                 $result=mysqli_query($conn, $a);
                                 if(mysqli_num_rows($result)!=0) { 
-                                    while($row = mysqli_fetch_array($result)){
+                                    while($rowbook = mysqli_fetch_array($result)){
                                         echo "
 <tr>
-                                    <td>$row[0]</td>
-                                    <td>$row[1]</td>
-                                    <td>$row[2]</td>
+                                    <td>$rowbook[0]</td>
+                                    <td>$rowbook[1]</td>
+                                    <td>$rowbook[2]</td>
                                 </tr>
 ";
                                     }
@@ -164,7 +164,12 @@
                     </div>
 
                     <hr />
-                    <a href="./indexOrder.php">Trở Về</a>
+                    <a href="./action.php?success=<?php echo $rowdetail['OrderID'] ?>"><button type="button"
+                            class="btn btn-success">Duyệt đơn hàng</button></a>
+                    <a href="./action.php?delete=<?php echo $rowdetail['OrderID'] ?>"
+                        Onclick='return ConfirmDelete();'><button type="button" class="btn btn-danger">Xóa đơn
+                            hàng</button></a>
+                    <a href="./index.php">Trở Về</a>
 
                 </div>
 
@@ -174,6 +179,15 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
+    <script>
+    function ConfirmDelete() {
+        var x = confirm("Are you sure you want to delete?");
+        if (x)
+            return true;
+        else
+            return false;
+    }
+    </script>
     <!-- jQuery -->
     <script src="../../assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../../Scripts/jquery.unobtrusive-ajax.min.js"></script>
