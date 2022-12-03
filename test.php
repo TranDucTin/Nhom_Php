@@ -122,16 +122,32 @@ require './connect_DB.php';
 // }
 // echo getCusID('US-003', $conn);
 // echo password_hash(123456, PASSWORD_DEFAULT);
-function getUserID($conn)
-{
-    $a='SELECT UserID FROM users  ORDER BY UserID DESC  LIMIT 1';
-    $result=mysqli_query($conn, $a);
-    if(mysqli_num_rows($result)!=0) {
-                $row = mysqli_fetch_array($result);
-    }
-    $dau = substr($row[0], 3);
-    $dau++;
-    return "US-".$dau;
-}
-echo getUserID($conn);
+// function getUserID($conn)
+// {
+//     $a='SELECT UserID FROM users  ORDER BY UserID DESC  LIMIT 1';
+//     $result=mysqli_query($conn, $a);
+//     if(mysqli_num_rows($result)!=0) {
+//                 $row = mysqli_fetch_array($result);
+//     }
+//     $dau = substr($row[0], 3);
+//     $dau++;
+//     return "US-".$dau;
+// }
+// echo getUserID($conn);
+// $to      = "minhhuytruong09@gmail.com";
+// $subject = "Quên mật khẩu";
+// $message = "Nội dung email";
+// $header  =  "From:myemail@exmaple.com \r\n";
+
+// $success = mail($to, $subject, $message, $header);
+
+// if($success == true ) {
+//     echo "Đã gửi mail thành công...";
+// }
+// else
+// {
+//       echo "Không gửi đi được...";
+// }
+$key = rand(100000, 999999);
+echo $key;
 ?>

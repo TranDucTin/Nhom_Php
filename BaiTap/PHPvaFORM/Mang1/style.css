@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+p {
+  text-align: center;
+}
+
+.dis {
+  pointer-events: none;
+  background-color: antiquewhite;
+}

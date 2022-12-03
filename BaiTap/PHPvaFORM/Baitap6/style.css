@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: blanchedalmond;
+}
+p {
+  color: rgb(35, 89, 160);
+  text-align: center;
+}
+table {
+  width: 100%;
+}

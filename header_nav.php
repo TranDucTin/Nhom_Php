@@ -28,30 +28,87 @@ if(!isset($_SESSION)) {
                             </div>
                         </li>
                         <li class="drop">
-                            <a href="/danh-muc">TRẺ EM</a>
-                            <div class="megamenu mega01">
+                            <a href="/danh-muc">BÀI TẬP</a>
+                            <div class="megamenu mega02">
                                 <ul class="item item01">
-                                    <li class="title">YÊU THÍCH NHẤT</li>
+                                    <li class="title">PHPvaFORM</li>
                                     <li>
-                                        <a href="/chi-tiet/harry-potter-va-ham-chua-bi-mat">Harry Potter v&#224;
-                                            H&#242;n đ&#225; Ph&#249;
-                                            thuỷ</a>
+                                        <a href="./BaiTap.php?bt=1-1">Bai1</a>
                                     </li>
                                     <li>
-                                        <a href="/chi-tiet/harry-potter-va-ham-chua-bi-mat">Harry Potter v&#224;
-                                            Hầm chứa b&#237; mật</a>
+                                        <a href="./BaiTap.php?bt=1-2">Bai2</a>
                                     </li>
                                     <li>
-                                        <a href="/chi-tiet/harry-potter-va-tu-nhan-azkaban">Harry Potter v&#224;
-                                            T&#249; nh&#226;n Azkaban</a>
+                                        <a href="./BaiTap.php?bt=1-3">Bai3</a>
                                     </li>
                                     <li>
-                                        <a href="/chi-tiet/harry-potter-va-chiec-coc-lua">Harry Potter v&#224;
-                                            Chiếc cốc lửa</a>
+                                        <a href="./BaiTap.php?bt=1-4">Bai4</a>
                                     </li>
                                     <li>
-                                        <a href="/chi-tiet/harry-potter-va-menh-lenh-phuong-hoang">Harry Potter
-                                            v&#224; Mệnh lệnh Phượng ho&#224;ng</a>
+                                        <a href="./BaiTap.php?bt=1-5">Bai5</a>
+                                    </li>
+                                    <li>
+                                        <a href="./BaiTap.php?bt=1-6">Bai6</a>
+                                    </li>
+                                    <li>
+                                        <a href="./BaiTap.php?bt=1-8">Bai8</a>
+                                    </li>
+                                </ul>
+                                <ul class="item item01">
+                                    <li class="title">PHPvaMANG</li>
+                                    <li>
+                                        <a href="">Bai1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai2</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai3</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai4</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai5</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai6</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai8</a>
+                                    </li>
+                                </ul>
+                                <ul class="item item01">
+                                    <li class="title">PHPvaSQL</li>
+                                    <li>
+                                        <a href="">Bai1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai2</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai3</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai4</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai5</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai6</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai7</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai8</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai9</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bai10</a>
                                     </li>
                                 </ul>
                             </div>
