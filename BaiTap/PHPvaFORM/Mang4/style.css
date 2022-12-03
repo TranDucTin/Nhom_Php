@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #eee;
+}
+table {
+  width: 100%;
+  background-color: rgb(200, 232, 221);
+}
+p {
+  background-color: rgb(21, 199, 149);
+  text-align: center;
+}

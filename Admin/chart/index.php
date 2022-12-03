@@ -93,7 +93,9 @@
                     <div class="chart-container col-md-6">
                         <div class="chart" style="background-color: blue">
                             <div class="title">Hôm nay</div>
-                            <div class="amount"><?php echo $sosachhomnay ?></div>
+                            <div class="amount"><?php if(isset($sosachhomnay)) {echo $sosachhomnay; 
+                                                }else { echo 0; 
+} ?></div>
                             <div class="content">cuốn sách đã bán được hôm nay</div>
                         </div>
                     </div>

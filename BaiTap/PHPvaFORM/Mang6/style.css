@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 400px;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+}
+p {
+  color: white;
+  text-align: center;
+  background-color: cadetblue;
+}

@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+  border: 1px solid;
+}
+
+p {
+  background-color: rgb(137, 7, 116);
+  color: white;
+  text-align: center;
+}
+
+.dis {
+  background-color: rgb(231, 185, 185);
+  pointer-events: none;
+}

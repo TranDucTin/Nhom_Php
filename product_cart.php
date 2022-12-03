@@ -21,6 +21,11 @@
 
 <body>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
+        <?php 
+        if(empty($_SESSION['cart'])) {
+            header('Location: ./danhmuc.php');
+        }
+        ?>
         <?php require './header_nav.php' ?>
         <div class="ht__bradcaump__area bg-image--2">
             <div class="container">

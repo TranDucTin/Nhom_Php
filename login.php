@@ -19,7 +19,13 @@
 </head>
 
 <body>
-    <?php session_start() ?>
+
+    <?php session_start();?>
+    <?php 
+    if(isset($_SESSION['user']) && $_SESSION['user']!="") {
+        header('Location: ./index.php'); 
+    } 
+    ?>
     <?php require './XLdangnhap.php' ?>
     <div class="wrapper" id="wrapper" runat="server" ClientIDMode="Static">
         <?php require './header_nav.php' ?>
