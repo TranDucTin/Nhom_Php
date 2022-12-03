@@ -15,3 +15,4 @@ echo "Country:$quocgia <br>";
 echo "Study:$study <br>";
 echo "Note:$note";
 ?>
+<a href="../../../index.php">Trở về</a>

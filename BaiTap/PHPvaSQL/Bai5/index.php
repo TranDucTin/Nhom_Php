@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    <a href="../../../index.php">Trở về</a>
     <?php 
         $server = "localhost";
         $username= "root";
@@ -60,6 +61,8 @@
         }
     }
     ?>
+
 </body>
+
 
 </html>

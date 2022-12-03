@@ -86,7 +86,7 @@
                             echo "<td style='text-align: center; width: 200px'>";
                             ?>
             <img width="60%" height="80%" src="./img/<?php echo $row['Hinh']; ?>">
-            <?php
+                            <?php
                             echo "</td>";
                             echo "<td><b>Thành phần dinh dưỡng: </b><br>".$row['TP_Dinh_Duong'];
                             echo "<br><b>Lợi ích: </b><br>".$row['Loi_ich'];
@@ -100,6 +100,7 @@
             ?>
         </table>
     </form>
+    <a href="../../../index.php">Trở về</a>
 </body>
 
 </html>

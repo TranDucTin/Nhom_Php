@@ -107,7 +107,7 @@
             <tr>
                 <td>Nhap n</td>
                 <td><input type="text" name="son" id="" value="<?php if (isset($soN)) { echo $soN;
-                                                         }?>" /></td>
+}?>" /></td>
             </tr>
             <tr>
                 <td></td>
@@ -116,35 +116,36 @@
             <tr>
                 <td>Mang</td>
                 <td><input type="text" name="mang" value="<?php if (isset($mang1)) { echo $mang1;
-                                                    }?>" class="dis" /></td>
+}?>" class="dis" /></td>
             </tr>
             <tr>
                 <td>So phan tu chan</td>
                 <td><input type="text" name="sochan" id="" class="dis" value="<?php if (isset($sophantuchanne)) { echo $sophantuchanne;
-                                                                        }?>" /></td>
+}?>" /></td>
             </tr>
             <tr>
                 <td>So phan tu nho hon 100</td>
                 <td><input type="text" name="sonho100" id="" class="dis" value="<?php if (isset($sophantunhohon100)) { echo $sophantunhohon100;
-                                                                          }?>" /></td>
+}?>" /></td>
             </tr>
             <tr>
                 <td>Tong am</td>
                 <td><input type="text" name="tongam" id="" class="dis" value="<?php if (isset($tongamne)) { echo $tongamne;
-                                                                        }?>" /></td>
+}?>" /></td>
             </tr>
             <tr>
                 <td>Vi tri 0</td>
                 <td><input type="text" name="vitri0" id="" class="dis" value="<?php if (isset($vitribang)) { echo $vitribang;
-                                                                        }?>" /></td>
+}?>" /></td>
             </tr>
             <tr>
                 <td>Sap xep</td>
                 <td><input type="text" name="sapxep" id="" class="dis" value="<?php if (isset($xep)) { echo $xep;
-                                                                        }?>" /></td>
+}?>" /></td>
             </tr>
         </table>
     </form>
+    <a href="../../../index.php">Trở về</a>
 </body>
 
 </html>

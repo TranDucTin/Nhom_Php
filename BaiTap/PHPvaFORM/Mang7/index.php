@@ -40,6 +40,7 @@
             <img src="./img/<?php echo $hinh ?>" alt="" />
         </div>
     </form>
+    <a href="../../../index.php">Trở về</a>
 </body>
 
 </html>

@@ -27,89 +27,44 @@ if(!isset($_SESSION)) {
                                 <?php require './list_categorygroup.php' ?>
                             </div>
                         </li>
+
                         <li class="drop">
-                            <a href="/danh-muc">BÀI TẬP</a>
-                            <div class="megamenu mega02">
-                                <ul class="item item01">
-                                    <li class="title">PHPvaFORM</li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-1">Bai1</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-2">Bai2</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-3">Bai3</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-4">Bai4</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-5">Bai5</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-6">Bai6</a>
-                                    </li>
-                                    <li>
-                                        <a href="./BaiTap.php?bt=1-8">Bai8</a>
-                                    </li>
+                            <a href="">BÀI TẬP</a>
+                            <div class="megamenu mega03">
+                                <!-- list_category -->
+
+                                <ul class='item item03'>
+                                    <li class='title'>PHPvaFORM</li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap1/index.php'>Bai 1</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap2/index.php'>Bai 2</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap3/index.php'>Bai 3</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap4/index.php'>Bai 4</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap5/index.php'>Bai 5</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap6/pheptinh.php'>Bai 6</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Baitap8/form.html'>Bai 8</a></li>
                                 </ul>
-                                <ul class="item item01">
-                                    <li class="title">PHPvaMANG</li>
-                                    <li>
-                                        <a href="">Bai1</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai2</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai3</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai4</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai5</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai6</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai8</a>
-                                    </li>
+                                <ul class='item item03'>
+                                    <li class='title'>PHPvaMANG</li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang1/index.php'>Bai 1</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang2/index.php'>Bai 2</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang3/index.php'>Bai 3</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang4/index.php'>Bai 4</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang5/index.php'>Bai 5</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang6/index.php'>Bai 6</a></li>
+                                    <li><a href='./BaiTap/PHPvaForm/Mang7/index.php'>Bai 7</a></li>
                                 </ul>
-                                <ul class="item item01">
-                                    <li class="title">PHPvaSQL</li>
-                                    <li>
-                                        <a href="">Bai1</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai2</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai3</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai4</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai5</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai6</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai7</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai8</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai9</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Bai10</a>
-                                    </li>
+                                <ul class='item item03'>
+                                    <li class='title'>PHPvaSQL</li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai1/index.php'>Bai 1</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai2/index.php'>Bai 2</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai3/index.php'>Bai 3</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai4/index.php'>Bai 4</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai5/index.php'>Bai 5</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai6/index.php'>Bai 6</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai7/index.php'>Bai 7</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai8/index.php'>Bai 8</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai9/index.php'>Bai 9</a></li>
+                                    <li><a href='./BaiTap/PHPvaSQL/Bai10/index.php'>Bai 10</a></li>
                                 </ul>
                             </div>
                         </li>
