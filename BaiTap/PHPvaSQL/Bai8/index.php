@@ -85,7 +85,7 @@
                 echo "<td align='center'>";
                 ?>
         <img src="./img/<?php echo $hinh; ?>">
-        <?php
+                <?php
                 echo "</td>";
                 echo "<td><b>Thanh phan dinh duong</b>";
                 echo $row['TP_Dinh_Duong']. "</br>";
@@ -123,4 +123,5 @@
         }
         ?>
     </div>
+    <a href="../../../index.php">Trở về</a>
 </body>

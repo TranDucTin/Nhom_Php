@@ -12,10 +12,11 @@
     $username= "root";
     $password= "";
     $dbname="quan_li_ban_sua";
-    $conn= mysqli_connect($server,$username,$password,$dbname);
-    if(!$conn){
+    $conn= mysqli_connect($server, $username, $password, $dbname);
+    if(!$conn) {
         die("Connecttion failed: " . mysqli_connect_error());
-    } else echo "Ket noi thanh cong<br>"; $query="SELECT * FROM hang_sua";
+    } else { echo "Ket noi thanh cong<br>";
+    } $query="SELECT * FROM hang_sua";
     $result=mysqli_query($conn, $query);
     echo "
     <table border='1'>
@@ -23,7 +24,7 @@
         <th colspan='5'>THÔNG TIN HANG SUA</th>
       </tr>
       "; 
-      if(mysqli_num_rows($result)!=0){ 
+    if(mysqli_num_rows($result)!=0) { 
         echo  "<tr>
                 <th>Mã HS</th>
                 <th>Tên hãng sữa</th>
@@ -32,13 +33,14 @@
                 <th>Email</th>
             </tr>";
         while($row = mysqli_fetch_array($result)){
-        echo "<tr>";
-        for ($i=0; $i <mysqli_num_fields($result); $i++) { 
-            echo "<td>".$row[$i]."</td>";
-        } 
-        echo "</tr>"; 
+            echo "<tr>";
+            for ($i=0; $i <mysqli_num_fields($result); $i++) { 
+                echo "<td>".$row[$i]."</td>";
+            } 
+            echo "</tr>"; 
         }
     } echo "</table>"; 
     ?>
+    <a href="../../../index.php">Trở về</a>
   </body>
 </html>
